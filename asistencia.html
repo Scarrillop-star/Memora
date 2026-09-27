@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEMORA — Asistencia</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="topbar" id="topbar"></div>
+    <main>
+      <h2 class="page-title">Asistencia</h2>
+
+      <div class="dias-tabs" id="dias-tabs"></div>
+
+      <div class="card" id="config-card" style="display:none;">
+        <strong>⏱ Horarios de asistencia</strong>
+        <div class="grid-cards" style="margin-top:10px;">
+          <div class="form-row"><label>Inicio de clase</label><input type="time" id="cfg-inicio"></div>
+          <div class="form-row"><label>Límite "Presente"</label><input type="time" id="cfg-presente"></div>
+          <div class="form-row"><label>Límite "Atraso"</label><input type="time" id="cfg-atraso"></div>
+        </div>
+        <button class="btn btn-primary" id="btn-guardar-config">Guardar horarios</button>
+        <p class="hint">Después de "Límite Atraso", cualquier registro se marca Ausente.</p>
+      </div>
+
+      <div class="card" id="simulador-card" style="display:none;">
+        <strong>🖐 Simulador de huella (temporal)</strong>
+        <p class="hint">Esto simula lo que hará el sensor ESP32: selecciona un estudiante y "coloca su huella".</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px;">
+          <select id="select-estudiante" class="estado-select" style="flex:1;min-width:180px;"></select>
+          <button class="btn btn-primary" id="btn-simular">Registrar huella</button>
+        </div>
+        <div class="hint" id="simular-resultado"></div>
+      </div>
+
+      <div class="card" id="finalizar-card" style="display:none;">
+        <button class="btn btn-outline" id="btn-finalizar">Finalizar registro del día (marcar ausentes)</button>
+      </div>
+
+      <div class="card">
+        <table id="tabla-asistencia">
+          <thead>
+            <tr><th>Estudiante</th><th>Hora</th><th>Estado</th><th></th></tr>
+          </thead>
+          <tbody id="tbody-asistencia"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/asistencia.js"></script>
+</body>
+</html>

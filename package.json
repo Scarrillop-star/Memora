@@ -1,0 +1,19 @@
+{
+  "name": "memora",
+  "version": "1.0.0",
+  "description": "Sistema escolar de asistencia y tareas MEMORA",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "seed": "node seed.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.3",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0"
+  }
+}

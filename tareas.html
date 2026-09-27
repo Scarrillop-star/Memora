@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MEMORA — Tareas</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="topbar" id="topbar"></div>
+    <main>
+      <h2 class="page-title">Tareas</h2>
+
+      <div class="card" id="form-card" style="display:none;">
+        <strong id="form-titulo">➕ Nueva tarea</strong>
+        <input type="hidden" id="tarea-id">
+        <div class="grid-cards" style="margin-top:10px;">
+          <div class="form-row"><label>Materia</label><input type="text" id="f-materia" placeholder="Ej. Matemática"></div>
+          <div class="form-row">
+            <label>Día</label>
+            <select id="f-dia">
+              <option>Lunes</option><option>Martes</option><option>Miércoles</option>
+              <option>Jueves</option><option>Viernes</option>
+            </select>
+          </div>
+          <div class="form-row"><label>Fecha límite (opcional)</label><input type="date" id="f-fecha-limite"></div>
+        </div>
+        <div class="form-row"><label>Descripción</label><textarea id="f-descripcion" rows="2" placeholder="Ej. Resolver ejercicios 1-10"></textarea></div>
+        <div style="display:flex;gap:10px;">
+          <button class="btn btn-primary" id="btn-guardar-tarea">Guardar tarea</button>
+          <button class="btn btn-outline" id="btn-cancelar-edicion" style="display:none;">Cancelar</button>
+        </div>
+      </div>
+
+      <div class="dias-tabs" id="dias-tabs"></div>
+      <div id="lista-tareas"></div>
+    </main>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/tareas.js"></script>
+</body>
+</html>
